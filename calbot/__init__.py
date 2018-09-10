@@ -12,8 +12,8 @@ def create_app():
         text = request.form['text'].strip()
         channel_name = request.form['channel_name'].strip()
         channel_id = request.form['channel_id'].strip()
-        print("User {} ({}) posted '{}' on channel {} ({})".format(user_name, user_id, text, channel_name, channel_id))
-        return 'Got it', 202
+        response_to_send = "User {} ({}) posted '{}' on channel {} ({})".format(user_name, user_id, text, channel_name, channel_id)
+        return response_to_send, 202
 
     @app.route('/status')
     def test():
