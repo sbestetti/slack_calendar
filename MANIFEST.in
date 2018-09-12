@@ -1,1 +1,3 @@
+include credentials.json
+include token.json
 global-exclude *.pyc
