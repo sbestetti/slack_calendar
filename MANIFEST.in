@@ -1,3 +1,4 @@
 include credentials.json
 include token.json
+include rooms.json
 global-exclude *.pyc

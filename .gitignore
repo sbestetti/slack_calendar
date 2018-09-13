@@ -106,3 +106,4 @@ venv.bak/
 # credentials
 token.json
 credentials.json
+rooms.json
