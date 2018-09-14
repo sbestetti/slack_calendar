@@ -14,6 +14,7 @@ setup(
         'google-auth',
         'google-auth-httplib2',        
         'google-api-python-client',
-        'oauth2client'
+        'oauth2client',
+        'requests'
     ],
 )

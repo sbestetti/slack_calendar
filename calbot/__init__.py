@@ -1,7 +1,7 @@
 from flask import Flask, json, request
 from werkzeug.datastructures import CombinedMultiDict, MultiDict
 import sys
-from . import roommanager, eventmanager, room
+from . import roommanager, eventmanager, room, responsebuilder
 
 def create_app():
     
@@ -22,13 +22,10 @@ def create_app():
     def freerooms():
         """Receives and manages the response from the form"""
         form_json = json.loads(request.form['payload'])
-        selection = form_json['actions'][0]['value']        
-        rooms_to_check = roommanager.get_rooms(selection)
-        free_rooms = eventmanager.check_if_free(rooms_to_check)
-        print('These rooms are free for the next 15 minutes: ')
-        for item in free_rooms:
-            print(item)                        
-        response_json = '{"text": "' + selection + '"}'
+        selection = form_json['actions'][0]['value']
+        response_address = form_json['response_url']        
+        responsebuilder.respond_to_query(selection, response_address)
+        response_json = ''
         response = app.response_class(
             response=response_json,
             status=200,
