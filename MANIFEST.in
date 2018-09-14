@@ -1,4 +1,2 @@
-include credentials.json
-include token.json
-include rooms.json
+include service.json
 global-exclude *.pyc

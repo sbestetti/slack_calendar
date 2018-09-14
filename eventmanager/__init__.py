@@ -3,21 +3,25 @@ from googleapiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file, client, tools
 import room
+from google.auth import app_engine
+from google.oauth2 import service_account
+# import googleapiclient
 
 # If modifying these scopes, delete the file token.json.
-SCOPES = 'https://www.googleapis.com/auth/calendar.readonly'
+SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
+SERVICE_ACCOUNT_FILE = 'service.json'
 
 def get_service():
     """
     Authenticates against Google API with the JSON credentials
     and return a service
     """
-    store = file.Storage('token.json')
-    creds = store.get()
-    if not creds or creds.invalid:
-        flow = client.flow_from_clientsecrets('credentials.json', SCOPES)
-        creds = tools.run_flow(flow, store)
-    service = build('calendar', 'v3', http=creds.authorize(Http()))
+    credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+    service = build('calendar', 'v3', credentials=credentials)
+    #flow = client.flow_from_clientsecrets(credentials, SCOPES)
+    #creds = tools.run_flow(flow, store)
+    #service = build('calendar', 'v3', http=creds.authorize(Http()))
+
     return service
 
 def check_if_free(rooms):
@@ -31,7 +35,7 @@ def check_if_free(rooms):
     now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
     time_to_check = 15 # Change this to a variable later
     free_rooms = []
-    for item in rooms:
+    for item in rooms:        
         events_result = service.events().list(
             calendarId=item.id,
             timeMin=now,

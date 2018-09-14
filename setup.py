@@ -11,6 +11,8 @@ setup(
     zip_safe=False,
     install_requires=[
         'flask',
+        'google-auth',
+        'google-auth-httplib2',        
         'google-api-python-client',
         'oauth2client'
     ],

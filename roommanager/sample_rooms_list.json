@@ -1,0 +1,152 @@
+{
+  "rooms": [
+    {
+      "name": "Brittas Bay",
+      "address": "distilled.ie_2d3535343537353130@resource.calendar.google.com",
+      "capacity": 3,
+      "location": "3rd floor",
+      "office": "dub"
+    },
+    {
+      "name": "Bull Island",
+      "address": "distilled.ie_3132383835333039363634@resource.calendar.google.com",
+      "capacity": 6,
+      "location": "3rd floor",
+      "office": "dub"
+    },
+    {
+      "name": "Cape Clear",
+      "address": "distilled.ie_3735313434313434393930@resource.calendar.google.com",
+      "capacity": 5,
+      "location": "2nd floor",
+      "office": "dub"
+    },
+    {
+      "name": "Carlingford",
+      "address": "distilled.ie_2d3137303831303732353833@resource.calendar.google.com",
+      "capacity": 8,
+      "location": "3rd floor",
+      "office": "dub"
+    },
+    {
+      "name": "Connemara",
+      "address": "distilled.ie_2d34313939353135373333@resource.calendar.google.com",
+      "capacity": 12,
+      "location": "2nd floor",
+      "office": "dub"
+    },
+    {
+      "name": "Dingle",
+      "address": "distilled.ie_2d38313039363136373834@resource.calendar.google.com",
+      "capacity": 6,
+      "location": "2nd floor",
+      "office": "dub"
+    },
+    {
+      "name": "Doolin",
+      "address": "distilled.ie_2d3236303330373037373238@resource.calendar.google.com",
+      "capacity": 6,
+      "location": "2nd floor",
+      "office": "dub"
+    },
+    {
+      "name": "Glenndalough",
+      "address": "distilled.ie_2d3537353832373730393238@resource.calendar.google.com",
+      "capacity": 8,
+      "location": "3rd floor",
+      "office": "dub"
+    },
+    {
+      "name": "Killiney Hill",
+      "address": "distilled.ie_3736333330393738393731@resource.calendar.google.com",
+      "capacity": 4,
+      "location": "3rd floor",
+      "office": "dub"
+    },
+    {
+      "name": "Lachinch",
+      "address": "distilled.ie_2d3338363732303138323431@resource.calendar.google.com",
+      "capacity": 8,
+      "location": "2nd floor",
+      "office": "dub"
+    },
+    {
+      "name": "Newgrange",
+      "address": "distilled.ie_2d3238313131333331313136@resource.calendar.google.com",
+      "capacity": 3,
+      "location": "3rd floor",
+      "office": "dub"
+    },
+    {
+      "name": "The Liberties",
+      "address": "distilled.ie_2d38353734373831393931@resource.calendar.google.com",
+      "capacity": 4,
+      "location": "3rd floor",
+      "office": "dub"
+    },
+    {
+      "name": "Tramore",
+      "address": "distilled.ie_2d32333231393139323538@resource.calendar.google.com",
+      "capacity": 3,
+      "location": "3rd floor",
+      "office": "dub"
+    },
+    {
+      "name": "After toughts",
+      "address": "distilled.ie_2d34343636383630322d353334@resource.calendar.google.com",
+      "capacity": 0,
+      "location": "Wexford - Right",
+      "office": "wex"
+    },
+    {
+      "name": "Big Deal",
+      "address": "distilled.ie_31343531333235322d323639@resource.calendar.google.com",
+      "capacity": 0,
+      "location": "Wexford - Board room",
+      "office": "wex"
+      
+    },
+    {
+      "name": "Big Ideas",
+      "address": "distilled.ie_2d3632383532303635323233@resource.calendar.google.com",
+      "capacity": 0,
+      "location": "Wexford - Middle",
+      "office": "wex"
+    },
+    {
+      "name": "Camper Van",
+      "address": "distilled.ie_33373739373036312d363134@resource.calendar.google.com",
+      "capacity": 0,
+      "location": "Wexford",
+      "office": "wex"
+    },    
+    {
+      "name": "Disco Cave",
+      "address": "distilled.ie_2d35353133363731353836@resource.calendar.google.com",
+      "capacity": 0,
+      "location": "Wexford",
+      "office": "wex"
+    },
+    {
+      "name": "Little Deal",
+      "address": "distilled.ie_36363933303438392d373733@resource.calendar.google.com",
+      "capacity": 0,
+      "location": "Wexford - Left",
+      "office": "wex"
+    },
+    {
+      "name": "No Deal",
+      "address": "distilled.ie_33383033313634363934@resource.calendar.google.com",
+      "capacity": 0,
+      "location": "Wexford",
+      "office": "wex"
+    },
+    {
+      "name": "The Library",
+      "address": "distilled.ie_3635373334393233373736@resource.calendar.google.com",
+      "capacity": 0,
+      "location": "Wexford",
+      "office": "wex"
+    }
+  ]
+}
