@@ -1,8 +1,7 @@
 from flask import Flask, json, request
 from werkzeug.datastructures import CombinedMultiDict, MultiDict
 import sys
-import roommanager
-import eventmanager
+from . import roommanager, eventmanager, room
 
 def create_app():
     

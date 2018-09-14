@@ -1,15 +1,16 @@
+import os
 import datetime
 from googleapiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file, client, tools
-import room
+from . import room
 from google.auth import app_engine
 from google.oauth2 import service_account
 # import googleapiclient
 
 # If modifying these scopes, delete the file token.json.
 SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
-SERVICE_ACCOUNT_FILE = 'service.json'
+SERVICE_ACCOUNT_FILE = os.path.join(os.getcwd(), 'service.json')
 
 def get_service():
     """

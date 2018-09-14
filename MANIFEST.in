@@ -1,2 +1,2 @@
-include service.json
+include calbot/service.json
 global-exclude *.pyc

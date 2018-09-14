@@ -1,4 +1,4 @@
-from room import Room
+from . import room
 
 list_of_rooms = []
 
@@ -8,7 +8,7 @@ def update_list(json_payload):
     global list_of_rooms
     list_of_rooms = []    
     for r in raw_rooms:            
-        new_room = Room(r['name'], r['address'], r['capacity'], r['location'], r['office'])
+        new_room = room.Room(r['name'], r['address'], r['capacity'], r['location'], r['office'])
         list_of_rooms.append(new_room)
 
 def get_rooms(office):
