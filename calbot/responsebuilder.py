@@ -6,7 +6,7 @@ def respond_to_query(selection, response_address):
     rooms_to_check = roommanager.get_rooms(selection)
     free_rooms = eventmanager.check_if_free(rooms_to_check)
     payload = {
-        "text": "These rooms are free for the next 15 minutes:",
+        "text": "These rooms are free for the next 30 minutes:",
         "attachments": [
             {
                 "text": "",                
@@ -19,5 +19,3 @@ def respond_to_query(selection, response_address):
     
     headers = {'Content-type': 'application/json', 'Accept': 'text/plain'} 
     r = requests.post(response_address, data=json.dumps(payload), headers=headers)
-    
-    print(r.json())
