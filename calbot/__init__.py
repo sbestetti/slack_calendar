@@ -31,7 +31,7 @@ def create_app():
             status=200,
             mimetype='application/json'
         )        
-        return response    
+        return response, 200    
 
     @app.route('/update_rooms', methods=['POST'])
     def update_rooms():

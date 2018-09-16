@@ -19,10 +19,6 @@ def get_service():
     """
     credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
     service = build('calendar', 'v3', credentials=credentials)
-    #flow = client.flow_from_clientsecrets(credentials, SCOPES)
-    #creds = tools.run_flow(flow, store)
-    #service = build('calendar', 'v3', http=creds.authorize(Http()))
-
     return service
 
 def check_if_free(rooms):
@@ -33,27 +29,16 @@ def check_if_free(rooms):
     in minutes
     """
     service = get_service()    
-    now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
-    time_to_check = 15 # Change this to a variable later
+    minutes_to_check = 30    
+    end_time = datetime.datetime.utcnow() + datetime.timedelta(minutes=minutes_to_check)    
+    now = datetime.datetime.utcnow().isoformat() + 'Z'
+    end_time = datetime.datetime.utcnow() + datetime.timedelta(minutes=minutes_to_check)
+    end_time_utc = end_time.isoformat() + 'Z'
     free_rooms = []
-    for item in rooms:        
-        events_result = service.events().list(
-            calendarId=item.id,
-            timeMin=now,
-            maxResults=1,
-            singleEvents=True,
-            orderBy='startTime'
-        ).execute()
-        events = events_result.get('items', [])
-        event = events[0]        
-        year = int(event['start'].get('dateTime')[:4])
-        month = int(event['start'].get('dateTime')[5:7])
-        day = int(event['start'].get('dateTime')[8:10])
-        hour = int(event['start'].get('dateTime')[11:13])
-        minute = int(event['start'].get('dateTime')[14:16])
-        event_time = datetime.datetime(year, month, day, hour, minute)
-        time_delta = event_time - datetime.datetime.now()        
-        if time_delta > datetime.timedelta(minutes=time_to_check):
+    for item in rooms:
+        query_body = {"timeMin": now, "timeMax": end_time_utc, "timeZone": "Europe/Dublin", "items": [{"id": item.id}]}
+        query_body['items'][0]['id'] = item.id
+        response = service.freebusy().query(body=query_body).execute()
+        if not response['calendars'][item.id].get('busy'):
             free_rooms.append(item)    
-    
     return free_rooms
