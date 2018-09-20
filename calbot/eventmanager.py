@@ -18,7 +18,7 @@ def get_service():
     and return a service
     """
     credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
-    service = build('calendar', 'v3', credentials=credentials)
+    service = build('calendar', 'v3', credentials=credentials, cache_discovery=False)
     return service
 
 def check_if_free(rooms):
