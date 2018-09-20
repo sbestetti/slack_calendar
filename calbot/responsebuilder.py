@@ -26,5 +26,5 @@ def respond_to_query(selection, response_address):
         for item in free_rooms:
             payload['attachments'][0]['text'] = payload['attachments'][0]['text'] + item.name + '\n'
     
-    headers = {'Content-type': 'application/json', 'Accept': 'text/plain'} 
+    headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}    
     r = requests.post(response_address, data=json.dumps(payload), headers=headers)

@@ -6,7 +6,6 @@ from oauth2client import file, client, tools
 from . import room
 from google.auth import app_engine
 from google.oauth2 import service_account
-# import googleapiclient
 
 # If modifying these scopes, delete the file token.json.
 SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
@@ -41,4 +40,5 @@ def check_if_free(rooms):
         response = service.freebusy().query(body=query_body).execute()
         if not response['calendars'][item.id].get('busy'):
             free_rooms.append(item)    
+    
     return free_rooms
